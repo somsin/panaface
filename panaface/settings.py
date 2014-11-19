@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__)) # for Heroku
 SECRET_KEY = '^rkk31tv7%n)6$ac$bjxhc2m=9tymg=e3n%&i!72q61^z*jj=2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -57,16 +57,19 @@ WSGI_APPLICATION = 'panaface.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'panadb',
-        'USER': 'panasimon',
-        'PASSWORD': 'It@s4You',
-        'HOST': 'localhost',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'panadb',
+            'USER': 'panasimon',
+            'PASSWORD': 'It@s4You',
+            'HOST': 'localhost',
+        }
     }
-}
+else:
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -90,8 +93,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/' # idid
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
-#DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
