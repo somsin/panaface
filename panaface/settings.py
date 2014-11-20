@@ -57,19 +57,17 @@ WSGI_APPLICATION = 'panaface.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'panadb',
-            'USER': 'panasimon',
-            'PASSWORD': 'It@s4You',
-            'HOST': 'localhost',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'panadb',
+        'USER': 'panasimon',
+        'PASSWORD': 'It@s4You',
+        'HOST': 'localhost',
     }
-else:
-    import dj_database_url
-    DATABASES['default'] =  dj_database_url.config()
+}
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
