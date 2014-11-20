@@ -1,10 +1,54 @@
-.banner {
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.center {
 	text-align: center;
+}
+.banner {
+	height: 400px;
+	text-align: center;
+	background: white url("http://en.support.files.wordpress.com/2013/05/paisley-pattern.png?w=460&h=211") no-repeat center center fixed; 
+}
+.banner-head {
+	vertical-align: middle;
 }
 .grids-example {
 	text-align: center;
 	margin: 2em auto;
-	border: 1px solid #ddd;
-	
-	
+	border: 1px solid #ddd;	
+}
+.coverme{
+	/*background: white url("images/background.gif") no-repeat right bottom; */
+	display: block;
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+.footer {
+	text-align: center;
+	position:absolute;
+  	bottom:0;
+  	width:100%;
+  	height:60px;   /* Height of the footer */
+  	background:white;
+   	min-width:1100px;
+}
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+}
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
 }
