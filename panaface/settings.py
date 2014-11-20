@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__)) # for Heroku
 SECRET_KEY = '^rkk31tv7%n)6$ac$bjxhc2m=9tymg=e3n%&i!72q61^z*jj=2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -67,7 +67,7 @@ DATABASES = {
     }
 }
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['panadb'] =  dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
